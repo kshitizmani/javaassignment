@@ -25,10 +25,14 @@ public class Transaction {
 	    private LocalDate date;
 	    private Long customerId; 
 
+	    
+	    
+	    
 //	    @ManyToOne
 //	    @JoinColumn(name = "customer_id")
 //	    private Customer customer;
 
+		
 		public Long getId() {
 			return id;
 		}

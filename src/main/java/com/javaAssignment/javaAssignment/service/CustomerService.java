@@ -27,18 +27,13 @@ public class CustomerService {
 	    @Autowired
 	    private CustomerRepository customerRepository;
 
-//	    public int calculateCustomerMonthlyReward(Long customerId, int year, int month) {
-//	    	List<Customer> list=customerRepository.findAll();
-//	    	System.out.println(list.toString());
-//	    	
-//	        Customer customer = customerRepository.findById(customerId)
-//	                .orElseThrow(() -> new CustomerNotFoundException("Customer not found with ID: " + customerId));
-//            System.out.println(customer.toString());
-//	        List<Transaction> transactions = transactionRepository.findByCustomerId(customerId);
-//	        return rewardService.calculateMonthlyRewardPoints(transactions, year, month);
-//	    }
+   
+	    public CustomerService() {
+			super();
+			// TODO Auto-generated constructor stub
+		}
 
-	    public int calculateCustomerMonthlyReward(Long customerId, int month) {
+		public int calculateCustomerMonthlyReward(Long customerId, int month) {
 	    	
 	    	List<Customer> list=customerRepository.findAll();
 	    	System.out.println(list.toString());
@@ -95,6 +90,7 @@ public class CustomerService {
 			Customer cust=new Customer();
 			cust.setName(customerName);
 			customerRepository.save(cust);
+			
 			data="Customer saved successful";
 			
 			}catch(Exception e) {
