@@ -24,7 +24,7 @@ public class RewardService {
     // Calculate reward points for a specific transaction
     private int calculateRewardPoints(Transaction transaction) {
         double amount = transaction.getAmount();  
-    	int points = 0;
+    	int points = 0;  
         if (amount > 100) {
             points += (amount - 100) * 2; // 2 points for every $ above 100
             points += 50; // 1 point for each dollar between 50-100
