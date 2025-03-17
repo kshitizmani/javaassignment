@@ -44,7 +44,9 @@ public class CustomerService {
             
 	        List<Transaction> transactions = transactionRepository.findByCustomerId(customerId);
 	        
-	        return rewardService.calculateMonthlyRewardPoints(transactions, month);
+	         int reward=rewardService.calculateMonthlyRewardPoints(transactions, month);
+	         
+	         return reward;
 	    }
 
 	    public int calculateCustomerTotalReward(Long customerId) {

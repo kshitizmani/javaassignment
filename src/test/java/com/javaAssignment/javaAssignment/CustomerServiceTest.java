@@ -45,26 +45,6 @@ public class CustomerServiceTest {
         assertEquals("Customer saved successful", result);
     }
     
-    @Test
-    void testCalculateTotalReward() {
-        // Prepare mock data
-        Customer customer = new Customer();
-        customer.setName("Akash");
-        when(customerRepository.save(any(Customer.class))).thenReturn(customer);
-
-        // Call the method under test
-        String result = custservice.addCustomer("Akash");
-
-        // Assert the result
-        assertEquals("Customer saved successful", result);
-
-        // Test additional names
-        customer.setName("Kshitiz");
-        when(customerRepository.save(any(Customer.class))).thenReturn(customer);
-        
-        result = custservice.addCustomer("Kshitiz");
-        assertEquals("Customer saved successful", result);
-    } 
    
     
     

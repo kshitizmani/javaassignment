@@ -13,11 +13,13 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.javaAssignment.javaAssignment.entity.Customer;
@@ -31,7 +33,7 @@ import com.javaAssignment.javaAssignment.service.RewardService;
 @ExtendWith(MockitoExtension.class)
 public class CustomerServiceForTotalRewardTest {
 	
-	 @Mock
+	    @Mock
 	    private CustomerRepository customerRepository;
 
 	    @Mock
@@ -48,9 +50,12 @@ public class CustomerServiceForTotalRewardTest {
 
 	    @BeforeEach
 	    void setUp() {
+	    	
+	    	MockitoAnnotations.openMocks(this);
+	    	
 	        customer = new Customer();
 	        customer.setId(1L);
-	        customer.setName("John Doe");
+	        customer.setName("Kshitiz Mani");
 
 	        transactions = Arrays.asList(
 	            new Transaction(1L, 100.0 , LocalDate.now() , 1L),
@@ -83,7 +88,7 @@ public class CustomerServiceForTotalRewardTest {
 	        when(customerRepository.findById(1L)).thenReturn(Optional.empty());
 
 	        // Verify exception is thrown
-	        Exception exception = org.junit.jupiter.api.Assertions.assertThrows(
+	        Exception exception = Assertions.assertThrows(
 	            CustomerNotFoundException.class,
 	            () -> customerService.calculateCustomerTotalReward(1L)
 	        );

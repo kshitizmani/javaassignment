@@ -32,6 +32,11 @@ public class Transaction {
 //	    @JoinColumn(name = "customer_id")
 //	    private Customer customer;
 
+		public Transaction() {
+			super();
+			// TODO Auto-generated constructor stub
+		}
+
 		public Transaction(Long id, double amount, LocalDate date, Long customerId) {
 			super();
 			this.id = id;
